@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uganda National IT Skills Assessment 2026 | NITA-U</title>
+  <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <!-- Inline CSS is used for the coat-of-arms image only -->
+    <img src="uganda-coat-of-arms.png" alt="Uganda coat of arms" style="max-width:80px;">
+    <h1>National Information Technology Authority — Uganda</h1>
+  </header>
+
+  <section class="banner">
+    <img src="survey-banner.jpg" alt="">
+    <h2>Uganda National IT Skills Assessment 2026</h2>
+  </section>
+
+  <nav class="progress" aria-label="Survey progress">
+    <ol>
+      <li class="current" aria-current="step">Step 1 — Respondent Details</li>
+      <li>Step 2 — Skills Assessment</li>
+      <li>Step 3 — Submit</li>
+    </ol>
+  </nav>
+
+  <main>
+    <form class="survey-form" action="#" method="post">
+      <fieldset>
+        <legend>Respondent Details</legend>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <select id="title" name="title">
+            <option value="">Select title</option>
+            <option value="mr">Mr</option>
+            <option value="mrs">Mrs</option>
+            <option value="ms">Ms</option>
+            <option value="dr">Dr</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="full-name" class="req">Full Name</label>
+          <input type="text" id="full-name" name="full-name" required minlength="4" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="req">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" pattern="\+256[0-9]{9}"
+                 title="Use the format +256 followed by 9 digits, e.g. +256772123456"
+                 placeholder="+256772123456" autocomplete="tel">
+          <small>Format: +256 followed by 9 digits.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" autocomplete="bday">
+        </div>
+
+        <div class="form-group">
+          <span class="label-text" id="gender-label">Gender</span>
+          <div class="options" role="radiogroup" aria-labelledby="gender-label">
+            <span class="option">
+              <input type="radio" id="gender-male" name="gender" value="male">
+              <label for="gender-male">Male</label>
+            </span>
+            <span class="option">
+              <input type="radio" id="gender-female" name="gender" value="female">
+              <label for="gender-female">Female</label>
+            </span>
+            <span class="option">
+              <input type="radio" id="gender-none" name="gender" value="prefer-not-to-say">
+              <label for="gender-none">Prefer not to say</label>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="region">Region</label>
+          <select id="region" name="region">
+            <option value="">Select region</option>
+            <option value="central">Central</option>
+            <option value="eastern">Eastern</option>
+            <option value="northern">Northern</option>
+            <option value="western">Western</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <span class="label-text" id="category-label">Respondent Category</span>
+          <div class="options" role="radiogroup" aria-labelledby="category-label">
+            <span class="option">
+              <input type="radio" id="cat-ict" name="category" value="ict-professional">
+              <label for="cat-ict">ICT Professional</label>
+            </span>
+            <span class="option">
+              <input type="radio" id="cat-gov" name="category" value="government-officer">
+              <label for="cat-gov">Government Officer</label>
+            </span>
+            <span class="option">
+              <input type="radio" id="cat-student" name="category" value="student">
+              <label for="cat-student">Student</label>
+            </span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-next">Next</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 National Information Technology Authority — Uganda</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #002147;
+  --gold: #D4AF37;
+  --line: #c8d0da;
+  --bg: #f4f6f9;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1b2430;
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 32px;
+  background: #ffffff;
+  border-bottom: 4px solid var(--gold);
+}
+
+.site-header img {
+  height: auto;
+  flex-shrink: 0;
+}
+
+.site-header h1 {
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
+  color: var(--blue);
+  line-height: 1.25;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: var(--blue);
+}
+
+.banner img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 33, 71, 0.6);
+}
+
+.banner h2 {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 6vw;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== PROGRESS INDICATOR ===== */
+.progress {
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 16px;
+}
+
+.progress ol {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+.progress li {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 0.92rem;
+  color: #5b6877;
+  background: #eef1f5;
+  border-bottom: 4px solid var(--line);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Current step in gold */
+.progress li.current {
+  background: #D4AF37;
+  color: #002147;
+  font-weight: bold;
+  border-bottom-color: #002147;
+}
+
+/* ===== FORM ===== */
+main {
+  max-width: 720px;
+  margin: 32px auto 60px;
+  padding: 0 16px;
+}
+
+fieldset {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--gold);
+  border-radius: 8px;
+  padding: 10px 28px 30px;
+}
+
+legend {
+  background: var(--blue);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 4px;
+}
+
+/* Label on top, input below */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.form-group label,
+.label-text {
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.form-group label.req::after {
+  content: " *";
+  color: #b3261e;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%;
+  padding: 11px 12px;
+  font: inherit;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: 3px solid rgba(212, 175, 55, 0.6);
+  border-color: var(--blue);
+}
+
+.form-group input:user-invalid {
+  border-color: #b3261e;
+}
+
+.form-group small {
+  margin-top: 5px;
+  color: #5b6877;
+  font-size: 0.85rem;
+}
+
+/* Radio groups */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+}
+
+.form-group .option label {
+  font-weight: normal;
+  color: inherit;
+  margin: 0;
+}
+
+/* ===== BUTTON ===== */
+.btn-next {
+  display: block;
+  margin: 30px 0 0 auto;
+  background: var(--blue);
+  color: #ffffff;
+  font: inherit;
+  font-weight: bold;
+  padding: 13px 44px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-next:hover {
+  background: var(--gold);
+  color: var(--blue);
+}
+
+.btn-next:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--blue);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  border-top: 4px solid var(--gold);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .site-header {
+    padding: 12px 16px;
+  }
+
+  .progress ol {
+    flex-direction: column;
+  }
+
+  fieldset {
+    padding: 10px 16px 24px;
+  }
+}
